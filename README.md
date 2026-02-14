@@ -1,45 +1,45 @@
-# 🎵 YouTube Mashup Generator
+# YouTube Mashup Generator
 
 A modern Streamlit web application that generates a mashup from YouTube videos of your favorite singer and delivers it directly via email.
 
-This project was developed as part of the **Mashup Assignment**, which includes:
+This project was developed as part of the Mashup Assignment, which includes:
 
-- ✅ Command Line Mashup Program  
-- ✅ Web App Mashup Generator  
-- ✅ Email delivery of generated mashup  
-- ✅ Secure credential handling  
+- Command Line Mashup Program  
+- Web App Mashup Generator  
+- Email delivery of generated mashup  
+- Secure credential handling  
 
 ---
 
-## 🖥️ UI Preview
+## UI Preview
 
 ![UI Preview](UI.png)
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎤 Download N YouTube videos of a singer  
-- 🎧 Extract and trim first Y seconds from each video  
-- 🎼 Merge all trimmed audios into one mashup  
-- 📦 Compress output into ZIP file  
-- 📧 Automatically send mashup to user email  
-- 🔐 Secure credentials using Streamlit Secrets  
-- 🧹 Automatic cleanup of temporary files  
-
----
-
-## 🛠️ Tech Stack
-
-- **Python**
-- **Streamlit**
-- **yt-dlp**
-- **FFmpeg**
-- **SMTP (Gmail App Password)**
+- Download N YouTube videos of a singer  
+- Extract and trim first Y seconds from each video  
+- Merge all trimmed audios into one mashup  
+- Compress output into ZIP file  
+- Automatically send mashup to user email  
+- Secure credentials using Streamlit Secrets  
+- Automatic cleanup of temporary files  
 
 ---
 
-## 📥 How It Works
+## Tech Stack
+
+- Python  
+- Streamlit  
+- yt-dlp  
+- FFmpeg  
+- SMTP (Gmail App Password)  
+
+---
+
+## How It Works
 
 1. User enters:
    - Singer Name  
@@ -56,9 +56,9 @@ This project was developed as part of the **Mashup Assignment**, which includes:
 
 ---
 
-## 🔐 Secure Credentials
+## Secure Credentials
 
-This project uses **Streamlit Secrets** to store email credentials securely.
+This project uses Streamlit Secrets to store email credentials securely.
 
 Create a `.streamlit/secrets.toml` file locally:
 
@@ -69,18 +69,18 @@ EMAIL_PASSWORD = "your_app_password"
 
 ---
 
-## 📦 requirements.txt
+## requirements.txt
 
 ```
 streamlit
 yt-dlp
 ```
 
-⚠️ FFmpeg must be installed separately and accessible via terminal.
+FFmpeg must be installed separately and accessible via terminal.
 
 ---
 
-## ▶️ Run Locally
+## Run Locally
 
 ```bash
 # Create virtual environment
@@ -96,7 +96,7 @@ python -m streamlit run app.py
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Mashup/
@@ -110,15 +110,15 @@ Mashup/
 
 ---
 
-## 🎯 Assignment Requirements Covered
+## Assignment Requirements Covered
 
-### ✅ Program 1 — Command Line Application
+### Program 1 — Command Line Application
 - Parameter validation  
 - Exception handling  
 - Audio trimming and merging  
 - ZIP file creation  
 
-### ✅ Program 2 — Web Application
+### Program 2 — Web Application
 - User-friendly UI using Streamlit  
 - Input validation  
 - Email delivery of mashup  
@@ -126,6 +126,6 @@ Mashup/
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Tanish Ahuja**
+Tanish Ahuja
