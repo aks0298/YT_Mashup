@@ -7,9 +7,6 @@ import re
 import subprocess
 from email.message import EmailMessage
 
-# =====================================================
-# PAGE CONFIG
-# =====================================================
 st.set_page_config(
     page_title="YouTube Mashup Generator 🎵",
     page_icon="🎧",
@@ -19,9 +16,6 @@ st.set_page_config(
 SENDER_EMAIL = st.secrets["SENDER_EMAIL"]
 EMAIL_PASSWORD = st.secrets["EMAIL_PASSWORD"]
 
-# =====================================================
-# STYLING (CLEAN + NO WHITE BAR ISSUE)
-# =====================================================
 st.markdown("""
 <style>
 body {
@@ -43,7 +37,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Style entire main block instead of custom div */
 section.main > div {
     background-color: rgba(255,255,255,0.05);
     padding: 40px;
@@ -67,15 +60,9 @@ section.main > div {
 </style>
 """, unsafe_allow_html=True)
 
-# =====================================================
-# HEADER
-# =====================================================
 st.markdown('<div class="title">🎵 YouTube Mashup Generator</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Create a mashup from your favorite singer and receive it via email</div>', unsafe_allow_html=True)
 
-# =====================================================
-# INPUTS
-# =====================================================
 singer = st.text_input("🎤 Singer Name")
 num_videos = st.number_input("📹 Number of Videos (>10)", min_value=11, step=1)
 duration = st.number_input("⏱ Duration per Video (seconds, >20)", min_value=21, step=1)
@@ -83,13 +70,9 @@ email = st.text_input("📧 Email Address")
 
 generate = st.button("🚀 Generate Mashup")
 
-# =====================================================
-# FUNCTIONS
-# =====================================================
 def is_valid_email(email):
     pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
     return re.match(pattern, email)
-
 
 def download_videos(singer, num_videos):
     os.makedirs("downloads", exist_ok=True)
@@ -104,7 +87,6 @@ def download_videos(singer, num_videos):
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([search_query])
-
 
 def create_mashup(duration, output_file):
     trimmed_files = []
@@ -138,7 +120,6 @@ def create_mashup(duration, output_file):
         output_file
     ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-
 def send_email(receiver, filename):
     msg = EmailMessage()
     msg["Subject"] = "🎵 Your Mashup is Ready!"
@@ -158,7 +139,6 @@ def send_email(receiver, filename):
         smtp.login(SENDER_EMAIL, EMAIL_PASSWORD)
         smtp.send_message(msg)
 
-
 def cleanup():
     if os.path.exists("downloads"):
         for file in os.listdir("downloads"):
@@ -169,9 +149,6 @@ def cleanup():
         if os.path.exists(file):
             os.remove(file)
 
-# =====================================================
-# MAIN
-# =====================================================
 if generate:
     if not singer or not email:
         st.error("Please fill all fields.")
