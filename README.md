@@ -102,7 +102,7 @@ python -m streamlit run app.py
 Mashup/
 │
 ├── app.py              # Streamlit Web Application
-├── 102313008.py        # Command Line Mashup Program
+├── 102317084.py        # Command Line Mashup Program
 ├── UI.png              # UI Screenshot
 ├── requirements.txt
 └── README.md
@@ -128,4 +128,4 @@ Mashup/
 
 ## Author
 
-Tanish Ahuja
+Akshit Singla
